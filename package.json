@@ -1,0 +1,48 @@
+{
+  "name": "@taller/wordpress-classic-parser",
+  "version": "1.0.0",
+  "description": "Parser to wordpress content originated from classic editor",
+  "author": "Taller Team <dev@taller.net.br>",
+  "license": "MPL-2.0",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test:unit": "jest",
+    "clean": "del-cli ./dist/",
+    "ts:cjs": "tsc -m commonjs",
+    "ts:amd": "tsc -t es5 -m amd -d false --outFile ./dist/main.js",
+    "ts:esm": "tsc -t es2019 -m esnext -d false --outDir ./dist/esm/",
+    "build": "npm run clean && npm run ts:cjs && npm run ts:amd && npm run ts:esm",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@wordpress/shortcode": "^3.2.1",
+    "node-html-parser": "^4.1.3",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.0",
+    "@types/ramda": "^0.27.44",
+    "@types/wordpress__shortcode": "^2.3.2",
+    "del-cli": "^4.0.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TallerWebSolutions/wordpress-classic-parser.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "Parser"
+  ],
+  "maintainers": [
+    "Taller team <dev@taller.net.br>"
+  ],
+  "bugs": {
+    "url": "https://github.com/TallerWebSolutions/wordpress-classic-parser/issues"
+  },
+  "homepage": "https://github.com/TallerWebSolutions/wordpress-classic-parser#README.md"
+}
